@@ -15,7 +15,7 @@ out=$(echo $response | jq -r '.centers[]
 | .available_capacity as $available_capacity 
 | .date as $date 
 | .vaccine as $vaccine 
-| select($min_age_limit==45 and $available_capacity>0) 
+| select($min_age_limit==18 and $available_capacity>0) 
 | "\($date) - \($name) - \($available_capacity) \($vaccine) vaccines available. Min age -  \($min_age_limit)"')
 
 
