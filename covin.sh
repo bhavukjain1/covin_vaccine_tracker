@@ -9,13 +9,14 @@ response=$(curl -s -k -X $'GET' \
 
 out=$(echo $response | jq -r '.centers[] 
 | .name as $name 
+| .pincode as $pincode 
 | .sessions[] 
 | .min_age_limit as $min_age_limit 
 | .available_capacity as $available_capacity 
 | .date as $date 
 | .vaccine as $vaccine 
-| select($min_age_limit==18 and $available_capacity>0) 
-| "\($date) - \($name) - \($available_capacity) \($vaccine) vaccines available. Min age -  \($min_age_limit)"')
+| select($min_age_limit==18 and $available_capacity>=2) 
+| "\($date) - \($name), Pincode - \($pincode). \($available_capacity) \($vaccine) vaccines available. Min age -  \($min_age_limit)"')
 
 
 echo "$out"	
