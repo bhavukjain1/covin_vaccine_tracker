@@ -13,8 +13,18 @@ chmod +x covin.sh
 ```
 chmod +x covin_scheduler.sh
 ```
-4. Run the `covin_scheduler.sh` shell script.
+4. Run the `covin_scheduler.sh` shell script to send out alerts to telegram.
 
 ```
 ./covin_scheduler.sh city_id telegram_token telegram_chat_id
+```
+
+If you just want to print out the results, run the `covin.sh` shell script.
+
+```
+./covin.sh city_id date
+```
+Example:
+```
+./covin.sh 651 15-05-2021
 ```
