@@ -18,15 +18,26 @@ chmod +x covin_scheduler.sh
 4. Run the `covin_scheduler.sh` shell script to send out alerts to telegram.
 
 ```
-./covin_scheduler.sh city_id telegram_token telegram_chat_id
+./covin_scheduler.sh district_id telegram_token telegram_chat_id
 ```
 
 If you just want to print out the results, run the `covin.sh` shell script.
 
 ```
-./covin.sh city_id date
+./covin.sh district_id date
 ```
 Example:
 ```
 ./covin.sh 651 15-05-2021
+```
+
+To get your appropriate `district_id`, use the following steps:
+
+1. Fetch the states:
+```
+https://cdn-api.co-vin.in/api/v2/admin/location/states
+```
+2. Using `state_id` from the above API, get the `district_id` by calling this:
+```
+https://cdn-api.co-vin.in/api/v2/admin/location/districts/$state_id
 ```
