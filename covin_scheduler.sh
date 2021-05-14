@@ -4,9 +4,6 @@ city=$1
 telegram_token=$2
 chat_id=$3
 
-#651
-
-
 current_week=$(date +%d-%m-%Y)
 second_week=$(gdate +%d-%m-%Y -d "$(gdate) + 7 day")
 third_week=$(gdate +%d-%m-%Y -d "$(gdate) + 14 day")
@@ -16,9 +13,6 @@ final+='\n'
 final+=$(./covin.sh $city $second_week)
 final+='\n'
 final+=$(./covin.sh $city $third_week)
-
-
-# echo "$final"
 
 while read line; do
 	#statements
