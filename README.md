@@ -2,6 +2,8 @@
 
 India's Co-Win vaccine slot tracker bot for telegram using bash. This will list down all the available vaccine slots till the next two weeks for people aged 18+.
 
+Also, these scripts must run on Indian IP addresses as Co-win API is country restricted. If your VPS isn't Indian location based, either change the server location to India or create a proxy. The easiest way to create a proxy is by using AWS Lambda and API Gateway.
+
 # Usage
 
 1. Install [jq](https://stedolan.github.io/jq/download/) to your machine.
